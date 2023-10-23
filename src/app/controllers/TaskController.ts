@@ -56,14 +56,8 @@ class TaskController {
     async show(req: Request, res: Response) {
         const { id } = req.params;
         const repository = getRepository(Task);
-        if (id === "") {
-            //return res.status(401).json({ error: 'Operação não permitida' })
-            console.log('ERROR AQUI')
-        } else {
-            const tasks = await repository.findOneOrFail(id);
-            return res.json(tasks);
-        }
-
+        const tasks = await repository.findOneOrFail(id);
+        return res.json(tasks);
     }
 
     //DELETA UMA TASK
