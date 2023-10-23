@@ -56,7 +56,7 @@ class TaskController {
     async show(req: Request, res: Response) {
         const { id } = req.params;
         const repository = getRepository(Task);
-        if (id != "") {
+        if (id === "") {
             //return res.status(401).json({ error: 'Operação não permitida' })
             console.log('ERROR AQUI')
         } else {
